@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>謎1</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,14 +12,21 @@
   <button onclick="checkAnswer()">判定</button>
   <p id="result"></p>
 
+  <div id="popup">✅</div>
+
   <script>
     function checkAnswer(){
       let input = document.getElementById("answer").value.trim();
-      let correct = "モノクロ"; // 正解をここに書く
+      let correct = "モノクロ"; // 正解
+      const resultEl = document.getElementById("result");
+      const popup = document.getElementById("popup");
+
       if(input === correct){
-        document.getElementById("result").innerText = "✅ 正解！";
+        resultEl.innerText = "正解！";
+        popup.classList.add("show");
+        setTimeout(() => popup.classList.remove("show"), 1000);
       } else {
-        document.getElementById("result").innerText = "❌ 不正解";
+        resultEl.innerText = "不正解";
       }
     }
   </script>
