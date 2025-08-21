@@ -16,14 +16,17 @@
 </head>
 <body>
   <h2>謎1</h2>
+
   <input type="text" id="answer" placeholder="答え">
   <button onclick="checkAnswer()">判定</button>
   <p id="result"></p>
 
   <script>
-    function checkAnswer(){
-      let input = document.getElementById("answer").value.trim();
-      let correct = "モノクロ"; // 正解
+    const inputEl = document.getElementById("answer");
+
+    function checkAnswer() {
+      let input = inputEl.value.trim();
+      const correct = "かえる"; // 正解
       const resultEl = document.getElementById("result");
 
       if(input === correct){
@@ -32,6 +35,13 @@
         resultEl.innerText = "不正解";
       }
     }
+
+    // Enterキーで判定
+    inputEl.addEventListener("keydown", function(event) {
+      if(event.key === "Enter") {
+        checkAnswer();
+      }
+    });
   </script>
 </body>
 </html>
