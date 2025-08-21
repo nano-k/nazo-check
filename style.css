@@ -1,4 +1,4 @@
-/* フォントをシンプルに */
+/* 共通スタイル */
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background-color: #f8f8f8;
@@ -77,29 +77,50 @@ a:hover {
   color: #fff;
 }
 
-/* レスポンシブ対応 */
+/* ポップアップ */
+#popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #222;
+  color: #fff;
+  padding: 40px;
+  font-size: 50px;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+#popup.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* レスポンシブ */
 @media (max-width: 480px) {
   body {
     padding: 20px 10px;
   }
-
   input {
     width: 90%;
     font-size: 14px;
   }
-
   button {
     padding: 8px 12px;
     font-size: 14px;
     margin-left: 5px;
   }
-
   #result {
     font-size: 16px;
   }
-
   h1, h2 {
     font-size: 20px;
     margin-bottom: 20px;
+  }
+  #popup {
+    padding: 30px;
+    font-size: 40px;
   }
 }
