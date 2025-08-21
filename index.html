@@ -2,24 +2,16 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>謎解き判定ページ</title>
+  <title>謎解きトップページ</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>答えを入力してください</h2>
-  <input type="text" id="answer" placeholder="答え">
-  <button onclick="checkAnswer()">判定</button>
-  <p id="result"></p>
-
-  <script>
-    function checkAnswer(){
-      let input = document.getElementById("answer").value.trim();
-      let correct = "かえる"; // ←ここに答えを設定
-      if(input === correct){
-        document.getElementById("result").innerText = "✅ 正解！おめでとう！";
-      } else {
-        document.getElementById("result").innerText = "❌ 不正解。もう一度挑戦！";
-      }
-    }
-  </script>
+  <h1>🌀 謎解きリスト 🌀</h1>
+  <ul>
+    <li><a href="q1.html" class="q1">謎1：はじめの謎</a></li>
+    <li><a href="q2.html" class="q2">謎2：次の謎</a></li>
+    <li><a href="q3.html" class="q3">謎3：最終問題</a></li>
+  </ul>
 </body>
 </html>
+
