@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>謎1</title>
+
+  <!-- OGPタグ -->
+  <meta property="og:title" content="謎1に挑戦！">
+  <meta property="og:description" content="ちょっとした謎にチャレンジしてみよう">
+  <meta property="og:image" content="https://nano-k.github.io/repo-name/images/mystery1.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nano-k.github.io/repo-name/q1.html">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,19 +20,14 @@
   <button onclick="checkAnswer()">判定</button>
   <p id="result"></p>
 
-  <div id="popup">✅</div>
-
   <script>
     function checkAnswer(){
       let input = document.getElementById("answer").value.trim();
-      let correct = "モノクロ"; // 正解
+      let correct = "かえる"; // 正解
       const resultEl = document.getElementById("result");
-      const popup = document.getElementById("popup");
 
       if(input === correct){
         resultEl.innerText = "正解！";
-        popup.classList.add("show");
-        setTimeout(() => popup.classList.remove("show"), 1000);
       } else {
         resultEl.innerText = "不正解";
       }
