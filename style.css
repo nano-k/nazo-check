@@ -8,6 +8,7 @@ body {
   align-items: center;
   padding: 40px 20px;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 h1, h2 {
@@ -24,6 +25,7 @@ input {
   border-radius: 6px;
   margin-top: 20px;
   width: 250px;
+  max-width: 90%;
   transition: all 0.2s;
   background-color: #fff;
   color: #222;
@@ -56,6 +58,7 @@ button:hover {
   margin-top: 20px;
   font-size: 18px;
   min-height: 24px;
+  word-break: break-word;
 }
 
 a {
@@ -65,9 +68,38 @@ a {
   border: 1px solid #222;
   border-radius: 6px;
   transition: all 0.2s;
+  display: inline-block;
+  margin: 5px 0;
 }
 
 a:hover {
   background-color: #222;
   color: #fff;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 480px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  input {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-left: 5px;
+  }
+
+  #result {
+    font-size: 16px;
+  }
+
+  h1, h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
 }
