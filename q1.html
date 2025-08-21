@@ -4,14 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>謎1</title>
-
-  <!-- OGPタグ -->
-  <meta property="og:title" content="謎1に挑戦！">
-  <meta property="og:description" content="ちょっとした謎にチャレンジしてみよう">
-  <meta property="og:image" content="https://nano-k.github.io/nazo-check/mystery1.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nano-k.github.io/nazo-check/q1.html">
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,22 +13,28 @@
   <button onclick="checkAnswer()">判定</button>
   <p id="result"></p>
 
+  <div id="explanation">
+    <strong>解説：</strong> 「モノクロ」は…（ここに解説内容を入れる）
+  </div>
+
   <script>
     const inputEl = document.getElementById("answer");
+    const resultEl = document.getElementById("result");
+    const explanationEl = document.getElementById("explanation");
 
     function checkAnswer() {
       let input = inputEl.value.trim();
       const correct = "モノクロ"; // 正解
-      const resultEl = document.getElementById("result");
 
       if(input === correct){
         resultEl.innerText = "正解！";
+        explanationEl.style.display = "block";
       } else {
         resultEl.innerText = "不正解";
+        explanationEl.style.display = "none";
       }
     }
 
-    // Enterキーで判定
     inputEl.addEventListener("keydown", function(event) {
       if(event.key === "Enter") {
         checkAnswer();
