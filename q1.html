@@ -4,16 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>謎001</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    #explanation {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #aaa;
+      background: #f9f9f9;
+    }
+  </style>
 </head>
 <body>
   <h2>謎001</h2>
 
+  <label for="answer">答えを入力：</label>
   <input type="text" id="answer" placeholder="答え">
-  <button onclick="checkAnswer()">判定</button>
+  <button type="button" onclick="checkAnswer()">判定</button>
+
   <p id="result"></p>
 
-  <!-- 解説ボックス（初期非表示） -->
+  <!-- 解説ボックス -->
   <div id="explanation">
     <strong>解説：</strong> 再度の望みが消え、彩度が失われました。
   </div>
@@ -23,22 +33,22 @@
     const resultEl = document.getElementById("result");
     const explanationEl = document.getElementById("explanation");
 
-    function checkAnswer() {
-      const input = inputEl.value.trim();
-      const correct = "モノクロ"; // 正解
+    const correctAnswers = ["モノクロ", "ものくろ"]; // 正答の候補
 
-      if(input === correct){
+    function checkAnswer() {
+      const input = inputEl.value.trim().replace(/\s+/g, "");
+      if (correctAnswers.includes(input)) {
         resultEl.innerText = "正解！";
-        explanationEl.style.display = "block"; // 正解で表示
+        explanationEl.style.display = "block";
       } else {
         resultEl.innerText = "不正解";
-        explanationEl.style.display = "none"; // 不正解で非表示
+        explanationEl.style.display = "none";
       }
     }
 
     // Enterキーでも判定可能
     inputEl.addEventListener("keydown", function(event) {
-      if(event.key === "Enter") {
+      if (event.key === "Enter") {
         checkAnswer();
       }
     });
