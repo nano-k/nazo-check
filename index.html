@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>謎解き判定ページ</title>
+</head>
+<body>
+  <h2>答えを入力してください</h2>
+  <input type="text" id="answer" placeholder="答え">
+  <button onclick="checkAnswer()">判定</button>
+  <p id="result"></p>
+
+  <script>
+    function checkAnswer(){
+      let input = document.getElementById("answer").value.trim();
+      let correct = "かえる"; // ←ここに答えを設定
+      if(input === correct){
+        document.getElementById("result").innerText = "✅ 正解！おめでとう！";
+      } else {
+        document.getElementById("result").innerText = "❌ 不正解。もう一度挑戦！";
+      }
+    }
+  </script>
+</body>
+</html>
