@@ -29,7 +29,7 @@ input {
   max-width: 90%;
   transition: all 0.2s;
   background-color: #fff;
-  color: #3c628a;
+  color: #222;
 }
 
 input:focus {
