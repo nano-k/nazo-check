@@ -29,10 +29,10 @@
     function checkAnswer() {
       const input = inputEl.value.trim().replace(/\s+/g, "");
       if (correctAnswers.includes(input)) {
-        resultEl.innerText = "正解！";
+        resultEl.innerText = "✅ 正解！";
         explanationEl.style.display = "block";
       } else {
-        resultEl.innerText = "不正解";
+        resultEl.innerText = "❌ 不正解";
         explanationEl.style.display = "none";
       }
     }
