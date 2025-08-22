@@ -62,6 +62,12 @@ button:hover {
   word-break: break-word;
 }
 
+#result.correct {
+  font-size: 32px; /* 正解時に大きく */
+  color: green;
+}
+
+
 #explanation {
   display: none; /* 初期非表示 */
   margin-top: 10px;
